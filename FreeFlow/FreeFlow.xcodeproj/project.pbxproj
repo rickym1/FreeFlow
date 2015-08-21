@@ -15,6 +15,7 @@
 		DD66D7371B86D4D600DBCFAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD66D7361B86D4D600DBCFAC /* Images.xcassets */; };
 		DD66D73A1B86D4D600DBCFAC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD66D7381B86D4D600DBCFAC /* LaunchScreen.xib */; };
 		DD66D7461B86D4D600DBCFAC /* FreeFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD66D7451B86D4D600DBCFAC /* FreeFlowTests.m */; };
+		DD66D7511B873FB900DBCFAC /* DisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD66D7501B873FB900DBCFAC /* DisclaimerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		DD66D73F1B86D4D600DBCFAC /* FreeFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD66D7441B86D4D600DBCFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD66D7451B86D4D600DBCFAC /* FreeFlowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeFlowTests.m; sourceTree = "<group>"; };
+		DD66D74F1B873FB900DBCFAC /* DisclaimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisclaimerViewController.h; sourceTree = "<group>"; };
+		DD66D7501B873FB900DBCFAC /* DisclaimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisclaimerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,13 +87,15 @@
 		DD66D7251B86D4D600DBCFAC /* FreeFlow */ = {
 			isa = PBXGroup;
 			children = (
-				DD66D72A1B86D4D600DBCFAC /* AppDelegate.h */,
-				DD66D72B1B86D4D600DBCFAC /* AppDelegate.m */,
+				DD66D7331B86D4D600DBCFAC /* Main.storyboard */,
+				DD66D74F1B873FB900DBCFAC /* DisclaimerViewController.h */,
+				DD66D7501B873FB900DBCFAC /* DisclaimerViewController.m */,
 				DD66D72D1B86D4D600DBCFAC /* FirstViewController.h */,
 				DD66D72E1B86D4D600DBCFAC /* FirstViewController.m */,
 				DD66D7301B86D4D600DBCFAC /* SecondViewController.h */,
 				DD66D7311B86D4D600DBCFAC /* SecondViewController.m */,
-				DD66D7331B86D4D600DBCFAC /* Main.storyboard */,
+				DD66D72A1B86D4D600DBCFAC /* AppDelegate.h */,
+				DD66D72B1B86D4D600DBCFAC /* AppDelegate.m */,
 				DD66D7361B86D4D600DBCFAC /* Images.xcassets */,
 				DD66D7381B86D4D600DBCFAC /* LaunchScreen.xib */,
 				DD66D7261B86D4D600DBCFAC /* Supporting Files */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD66D7321B86D4D600DBCFAC /* SecondViewController.m in Sources */,
+				DD66D7511B873FB900DBCFAC /* DisclaimerViewController.m in Sources */,
 				DD66D72C1B86D4D600DBCFAC /* AppDelegate.m in Sources */,
 				DD66D72F1B86D4D600DBCFAC /* FirstViewController.m in Sources */,
 				DD66D7291B86D4D600DBCFAC /* main.m in Sources */,
