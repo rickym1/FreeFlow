@@ -24,7 +24,12 @@
     [self.rateTextView setDelegate:self];
     [self.factorTextView setDelegate:self];
     
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:gestureRecognizer];
+    
 }
+
 - (IBAction)rateTextFieldDidChange:(UITextField *)sender {
     
     NSString *enteredText = sender.text;
@@ -44,6 +49,10 @@
         sender.text = nil;
     }
     self.factorTextView.text = enteredText;
+}
+
+-(void) hideKeyboard {
+    [self.view endEditing:YES];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
