@@ -24,9 +24,9 @@
                                     <constraint firstAttribute="height" constant="30" id="VGD-G2-WX3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
-                                    <action selector="rateTextFieldDidChange:" destination="9pv-A4-QxB" eventType="editingChanged" id="Me8-wa-2ei"/>
+                                    <action selector="rateTextFieldDidChange:" destination="9pv-A4-QxB" eventType="editingChanged" id="NjA-CP-7mp"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IV tubing drip factor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLw-k5-bAk">
@@ -36,9 +36,9 @@
                                     <constraint firstAttribute="height" constant="30" id="rhu-Nk-SgN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
-                                    <action selector="factorTextFieldDidChange:" destination="9pv-A4-QxB" eventType="editingChanged" id="vEa-xm-pis"/>
+                                    <action selector="factorTextFieldDidChange:" destination="9pv-A4-QxB" eventType="editingChanged" id="tXy-wX-xJn"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drops(gtt)/ml" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ju8-La-iwi">

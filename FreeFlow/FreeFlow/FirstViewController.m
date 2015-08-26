@@ -21,8 +21,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.rateTextView setDelegate:self];
+    [self.factorTextView setDelegate:self];
     
 }
+- (IBAction)rateTextFieldDidChange:(UITextField *)sender {
+    
+    NSString *enteredText = sender.text;
+    float enteredNumber = [enteredText floatValue];
+    if (enteredNumber == 0) {
+        sender.text = nil;
+    }
+    self.rateTextView.text = enteredText;
+    
+}
+
+- (IBAction)factorTextFieldDidChange:(UITextField *)sender {
+    
+    NSString *enteredText = sender.text;
+    float enteredNumber = [enteredText floatValue];
+    if (enteredNumber == 0) {
+        sender.text = nil;
+    }
+    self.factorTextView.text = enteredText;
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)calculateRate {
+    
+    if (self.rateTextView.text && self.factorTextView.text != nil) {
+        NSLog(@"It's Calculating Time!");
+        
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
