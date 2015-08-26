@@ -25,6 +25,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="rateTextFieldDidChange:" destination="9pv-A4-QxB" eventType="editingChanged" id="Me8-wa-2ei"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IV tubing drip factor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLw-k5-bAk">
                                 <rect key="frame" x="234" y="461" width="131" height="30"/>
@@ -34,6 +37,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="factorTextFieldDidChange:" destination="9pv-A4-QxB" eventType="editingChanged" id="vEa-xm-pis"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drops(gtt)/ml" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ju8-La-iwi">
                                 <rect key="frame" x="368" y="470" width="85" height="21"/>
@@ -178,6 +184,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Rate Visualizer" image="drop" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="factorTextView" destination="gLw-k5-bAk" id="jp4-bg-zgu"/>
+                        <outlet property="rateTextView" destination="jXF-FE-VPg" id="I9m-VA-UHo"/>
+                        <outlet property="secondsLabelView" destination="tpe-f6-bsV" id="5ra-Qv-Pjf"/>
+                        <outlet property="soundSwitch" destination="29g-ZV-zb7" id="6o5-Sx-eDr"/>
                         <segue destination="jbJ-11-ih0" kind="show" identifier="showDisclaimer" id="DiO-5P-3za"/>
                     </connections>
                 </viewController>

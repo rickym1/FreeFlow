@@ -9,6 +9,10 @@
 #import "FirstViewController.h"
 
 @interface FirstViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *soundSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *rateTextView;
+@property (weak, nonatomic) IBOutlet UITextField *factorTextView;
+@property (weak, nonatomic) IBOutlet UILabel *secondsLabelView;
 
 @end
 
@@ -17,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
