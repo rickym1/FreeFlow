@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface FirstViewController : UIViewController <UITextFieldDelegate>
+@interface FirstViewController : UIViewController <UITextFieldDelegate, AVAudioPlayerDelegate>
+
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 
 @end

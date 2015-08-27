@@ -102,6 +102,16 @@
 
 -(void)playRate {
     
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"ting" ofType:@"caf"]];
+    NSError *error;
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if (error) {
+        NSLog(@"Error in audioPlayer, %@", [error localizedDescription]);
+    } else {
+        _audioPlayer.delegate = self;
+        [_audioPlayer play];
+    }
+    
     if (self.rateTextView.text.length > 0 && self.factorTextView.text.length > 0) {
         
         if (self.normalBackground) {
