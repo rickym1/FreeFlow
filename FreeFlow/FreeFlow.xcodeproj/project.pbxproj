@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD1DB5361B8EE37B00F99297 /* ting.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD1DB5351B8EE37B00F99297 /* ting.caf */; };
+		DD1DB5381B8FE77900F99297 /* ping.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD1DB5371B8FE77900F99297 /* ping.caf */; };
 		DD66D7291B86D4D600DBCFAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD66D7281B86D4D600DBCFAC /* main.m */; };
 		DD66D72C1B86D4D600DBCFAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD66D72B1B86D4D600DBCFAC /* AppDelegate.m */; };
 		DD66D72F1B86D4D600DBCFAC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD66D72E1B86D4D600DBCFAC /* FirstViewController.m */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		DD1DB5351B8EE37B00F99297 /* ting.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ting.caf; sourceTree = "<group>"; };
+		DD1DB5371B8FE77900F99297 /* ping.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ping.caf; sourceTree = "<group>"; };
 		DD66D7231B86D4D600DBCFAC /* FreeFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD66D7271B86D4D600DBCFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD66D7281B86D4D600DBCFAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				DD1DB5351B8EE37B00F99297 /* ting.caf */,
+				DD1DB5371B8FE77900F99297 /* ping.caf */,
 			);
 			name = sounds;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				DD66D7351B86D4D600DBCFAC /* Main.storyboard in Resources */,
 				DD66D73A1B86D4D600DBCFAC /* LaunchScreen.xib in Resources */,
 				DD1DB5361B8EE37B00F99297 /* ting.caf in Resources */,
+				DD1DB5381B8FE77900F99297 /* ping.caf in Resources */,
 				DD66D7371B86D4D600DBCFAC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

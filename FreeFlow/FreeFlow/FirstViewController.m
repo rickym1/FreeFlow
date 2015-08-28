@@ -119,7 +119,7 @@
 
 -(void)playRate {
     
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"ting" ofType:@"caf"]];
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"ping" ofType:@"caf"]];
     NSError *error;
     _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     if (error) {
