@@ -176,28 +176,36 @@
         
         self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
         
-        if (self.dropsPerMinute < 120) {
-            if (self.dropsPerMinute < 61) {
-                [UIView animateWithDuration:0.9 animations:^{
-                    self.view.layer.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1].CGColor;
-                } completion:^(BOOL finished) {
-                }];
+        if (self.dropsPerMinute < 833) {
+            if (self.dropsPerMinute < 120) {
+                if (self.dropsPerMinute < 61) {
+                    [UIView animateWithDuration:0.9 animations:^{
+                        self.view.layer.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1].CGColor;
+                    } completion:^(BOOL finished) {
+                    }];
+                } else {
+                    [UIView animateWithDuration:0.5 animations:^{
+                        self.view.layer.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1].CGColor;
+                    } completion:^(BOOL finished) {
+                    }];
+                }
             } else {
-                [UIView animateWithDuration:0.5 animations:^{
+                [UIView animateWithDuration:0.05 animations:^{
                     self.view.layer.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1].CGColor;
                 } completion:^(BOOL finished) {
                 }];
             }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [NSTimer scheduledTimerWithTimeInterval:(60/self.dropsPerMinute) target:self selector:@selector(playRate) userInfo:nil repeats:NO];
+            });
+            
         } else {
-            [UIView animateWithDuration:0.05 animations:^{
-                self.view.layer.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1].CGColor;
-            } completion:^(BOOL finished) {
-            }];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Such a high rate cannot be visualized accurately." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            self.view.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1];
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [NSTimer scheduledTimerWithTimeInterval:(60/self.dropsPerMinute) target:self selector:@selector(playRate) userInfo:nil repeats:NO];
-        });
     }
 }
 
