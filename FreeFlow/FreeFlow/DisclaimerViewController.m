@@ -20,9 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(acknowledgeTap:)];
-    [self.view addGestureRecognizer:singleTap];
-    
+        
     self.boxUnChecked = YES;
     
 }
@@ -40,14 +38,16 @@
     
 }
 
-- (void)acknowledgeTap: (UITapGestureRecognizer *)recognizer {
+- (IBAction)acknowledgePressed:(UIButton *)sender {
     
     if (self.boxUnChecked == NO) {
-        [self performSegueWithIdentifier:@"acknowledgeShow" sender:nil];
-
+        [self performSegueWithIdentifier:@"showAcknowledged" sender:sender];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasSeenTutorial"];
     }
     
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

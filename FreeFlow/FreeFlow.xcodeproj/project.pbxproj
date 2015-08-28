@@ -101,8 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				DD1DB5341B8EE31C00F99297 /* sounds */,
-				DD66D74F1B873FB900DBCFAC /* DisclaimerViewController.h */,
 				DD66D7331B86D4D600DBCFAC /* Main.storyboard */,
+				DD66D74F1B873FB900DBCFAC /* DisclaimerViewController.h */,
 				DD66D7501B873FB900DBCFAC /* DisclaimerViewController.m */,
 				DD66D72D1B86D4D600DBCFAC /* FirstViewController.h */,
 				DD66D72E1B86D4D600DBCFAC /* FirstViewController.m */,

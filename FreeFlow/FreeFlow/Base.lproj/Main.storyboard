@@ -223,7 +223,8 @@
                         <outlet property="factorTextView" destination="gLw-k5-bAk" id="jp4-bg-zgu"/>
                         <outlet property="rateTextView" destination="jXF-FE-VPg" id="I9m-VA-UHo"/>
                         <outlet property="secondsLabelView" destination="tpe-f6-bsV" id="5ra-Qv-Pjf"/>
-                        <segue destination="jbJ-11-ih0" kind="show" identifier="showDisclaimer" id="DiO-5P-3za"/>
+                        <outlet property="sound" destination="og8-EY-GtR" id="nO5-Ia-fCn"/>
+                        <segue destination="jbJ-11-ih0" kind="presentation" identifier="showDisclaimer" id="wFn-Vm-MFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -490,6 +491,10 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="acknowledgePressed:" destination="jbJ-11-ih0" eventType="touchUpInside" id="qAJ-vP-eya"/>
+                                    <segue destination="9pv-A4-QxB" kind="show" identifier="showAcknowledged" id="Fgj-uI-rWc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4N-px-RqD">
                                 <rect key="frame" x="280" y="349" width="40" height="40"/>
@@ -560,4 +565,7 @@
         <image name="stouch" width="30" height="30"/>
         <image name="uncheckeds" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fgj-uI-rWc"/>
+    </inferredMetricsTieBreakers>
 </document>

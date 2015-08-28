@@ -7,16 +7,19 @@
 //
 
 #import "FirstViewController.h"
+#import "DisclaimerViewController.h"
 
-@interface FirstViewController ()
+@interface FirstViewController () <UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch *soundSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *rateTextView;
 @property (weak, nonatomic) IBOutlet UITextField *factorTextView;
 @property (weak, nonatomic) IBOutlet UILabel *secondsLabelView;
+@property (weak, nonatomic) IBOutlet UIButton *sound;
 
 @property (nonatomic, assign) CGFloat dropsPerMinute;
 @property (nonatomic, assign) BOOL normalBackground;
 @property (nonatomic, assign) BOOL soundOff;
+@property (nonatomic, assign) BOOL readyToFlash;
 
 @end
 
@@ -28,12 +31,28 @@
     [self.rateTextView setDelegate:self];
     [self.factorTextView setDelegate:self];
     
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(stop)];
     gestureRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.delegate = self;
     
     self.normalBackground = YES;
     self.soundOff = YES;
+    self.readyToFlash = YES;
+    
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasSeenTutorial"]) {
+        [self displayDisclaimer];
+    }
+    
+}
+
+- (void) displayDisclaimer {
+    
+    [self performSegueWithIdentifier:@"showDisclaimer" sender:self];
     
 }
 
@@ -85,15 +104,37 @@
     
 }
 
--(void) hideKeyboard {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+       shouldReceiveTouch:(UITouch *)touch {
+    
+    if (CGRectContainsPoint(self.sound.frame, [touch locationInView:self.view]))
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(void) stop {
     [self.view endEditing:YES];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1];
+    self.normalBackground = YES;
+    self.readyToFlash = NO;
+
+    
+
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     
     [textField resignFirstResponder];
     [self calculateRate];
-    [self playRate];
+    self.readyToFlash = YES;
+    
+    if (self.readyToFlash == YES) {
+        [self playRate];
+    }
     
     
     return YES;
@@ -132,9 +173,16 @@
         [_audioPlayer play];
     }
 
-    
-    if (self.rateTextView.text.length > 0 && self.factorTextView.text.length > 0) {
+    if (self.rateTextView.text.length > 0 && self.factorTextView.text.length > 0 && self.readyToFlash == YES) {
         
+        self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.view.layer.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1].CGColor;
+        } completion:^(BOOL finished) {
+        
+        }];
+        /*
         if (self.normalBackground) {
             self.view.backgroundColor = [UIColor whiteColor];
             self.normalBackground = NO;
@@ -142,7 +190,8 @@
             self.view.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1];
             self.normalBackground = YES;
         }
-        
+     */
+    
         dispatch_async(dispatch_get_main_queue(), ^{
             [NSTimer scheduledTimerWithTimeInterval:(60/self.dropsPerMinute) target:self selector:@selector(playRate) userInfo:nil repeats:NO];
         });
