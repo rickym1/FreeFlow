@@ -16,6 +16,7 @@
 
 @property (nonatomic, assign) CGFloat dropsPerMinute;
 @property (nonatomic, assign) BOOL normalBackground;
+@property (nonatomic, assign) BOOL soundOff;
 
 @end
 
@@ -32,6 +33,7 @@
     [self.view addGestureRecognizer:gestureRecognizer];
     
     self.normalBackground = YES;
+    self.soundOff = YES;
     
 }
 
@@ -65,6 +67,21 @@
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
     
     return [string isEqualToString:filtered];
+    
+}
+
+
+- (IBAction)soundPressed:(UIButton *)sender {
+    
+    UIButton *btn = sender;
+    
+    if (self.soundOff == YES) {
+        [btn setImage:[UIImage imageNamed:@"icon-sound-on.png"] forState:UIControlStateNormal];
+        self.soundOff = NO;
+    } else {
+        [btn setImage:[UIImage imageNamed:@"icon-sound-off.png"] forState:UIControlStateNormal];
+        self.soundOff = YES;
+    }
     
 }
 
@@ -109,8 +126,12 @@
         NSLog(@"Error in audioPlayer, %@", [error localizedDescription]);
     } else {
         _audioPlayer.delegate = self;
+    }
+    
+    if (self.soundOff == NO) {
         [_audioPlayer play];
     }
+
     
     if (self.rateTextView.text.length > 0 && self.factorTextView.text.length > 0) {
         

@@ -10,6 +10,8 @@
 
 @interface DisclaimerViewController () <UIGestureRecognizerDelegate>
 
+@property (nonatomic, assign) BOOL boxUnChecked;
+
 @end
 
 @implementation DisclaimerViewController
@@ -21,11 +23,30 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(acknowledgeTap:)];
     [self.view addGestureRecognizer:singleTap];
     
+    self.boxUnChecked = YES;
+    
+}
+
+- (IBAction)checkBoxPressed:(UIButton *)sender {
+    
+    UIButton *btn = sender;
+    if (self.boxUnChecked == YES) {
+        [btn setImage:[UIImage imageNamed:@"checkeds.png"] forState:UIControlStateNormal];
+        self.boxUnChecked = NO;
+    } else {
+        [btn setImage:[UIImage imageNamed:@"uncheckeds.png"] forState:UIControlStateNormal];
+        self.boxUnChecked = YES;
+    }
+    
 }
 
 - (void)acknowledgeTap: (UITapGestureRecognizer *)recognizer {
     
-    [self performSegueWithIdentifier:@"acknowledgeShow" sender:nil];
+    if (self.boxUnChecked == NO) {
+        [self performSegueWithIdentifier:@"acknowledgeShow" sender:nil];
+
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
