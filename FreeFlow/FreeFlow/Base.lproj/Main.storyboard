@@ -481,16 +481,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jy-DK-Jsb">
-                                <rect key="frame" x="155" y="418" width="291" height="103"/>
+                                <rect key="frame" x="154" y="418" width="291" height="51"/>
                                 <color key="backgroundColor" red="0.10588235294117647" green="0.71372549019607845" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103" id="43i-ou-6b6"/>
+                                    <constraint firstAttribute="width" constant="291" id="ABQ-gX-D7T"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="OK">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="43i-ou-6b6"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="acknowledgePressed:" destination="jbJ-11-ih0" eventType="touchUpInside" id="qAJ-vP-eya"/>
                                     <segue destination="9pv-A4-QxB" kind="show" identifier="showAcknowledged" id="Fgj-uI-rWc"/>
@@ -521,15 +527,20 @@
                             <constraint firstItem="dda-50-Qyw" firstAttribute="top" secondItem="vGK-a8-Tk4" secondAttribute="bottom" constant="14" id="eiG-op-jP6"/>
                             <constraint firstItem="vGK-a8-Tk4" firstAttribute="leading" secondItem="rYA-Ah-rHn" secondAttribute="leadingMargin" id="gBm-JP-p1a"/>
                             <constraint firstItem="bPB-fP-DUH" firstAttribute="top" secondItem="dda-50-Qyw" secondAttribute="bottom" constant="57" id="hs0-Xt-MlZ"/>
+                            <constraint firstItem="f5f-KT-Gz7" firstAttribute="top" secondItem="3jy-DK-Jsb" secondAttribute="bottom" constant="79" id="key-st-Jzx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3jy-DK-Jsb" secondAttribute="trailing" constant="138" id="lVi-3p-Ktc"/>
                             <constraint firstAttribute="centerX" secondItem="S4N-px-RqD" secondAttribute="centerX" id="nvk-Mb-Vvh"/>
                             <constraint firstItem="bPB-fP-DUH" firstAttribute="leading" secondItem="rYA-Ah-rHn" secondAttribute="leadingMargin" id="o58-8v-jEl"/>
+                            <constraint firstAttribute="centerX" secondItem="3jy-DK-Jsb" secondAttribute="centerX" id="qiw-UE-jgq"/>
                             <constraint firstItem="3jy-DK-Jsb" firstAttribute="top" secondItem="S4N-px-RqD" secondAttribute="bottom" constant="29" id="rKA-9k-92C"/>
                             <constraint firstItem="S4N-px-RqD" firstAttribute="top" secondItem="bPB-fP-DUH" secondAttribute="bottom" constant="22" id="s6R-Y8-w7y"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="2Zw-fn-lim"/>
                                 <exclude reference="BnU-5H-j31"/>
+                                <exclude reference="lVi-3p-Ktc"/>
+                                <exclude reference="key-st-Jzx"/>
                             </mask>
                         </variation>
                     </view>
