@@ -12,7 +12,6 @@
 @interface FirstViewController : UIViewController <UITextFieldDelegate, AVAudioPlayerDelegate>
 
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
-@property (nonatomic, assign) BOOL readyToFlash;
 
 
 

@@ -19,6 +19,8 @@
 @property (nonatomic, assign) CGFloat dropsPerMinute;
 @property (nonatomic, assign) BOOL normalBackground;
 @property (nonatomic, assign) BOOL soundOff;
+@property (nonatomic, assign) BOOL readyToFlash;
+
 
 @end
 
@@ -46,6 +48,12 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasSeenTutorial"]) {
         [self displayDisclaimer];
     }
+    
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    
+    self.readyToFlash = NO;
     
 }
 
