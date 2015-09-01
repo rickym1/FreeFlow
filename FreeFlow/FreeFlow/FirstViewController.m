@@ -154,11 +154,11 @@
         float rate = [self.rateTextView.text floatValue];
         float factor = [self.factorTextView.text floatValue];
         float dropsPerHour = rate * factor;
-        float dropsPerSecond = dropsPerHour / 3600;
-        self.dropsPerMinute = dropsPerHour / 60;
+        float dropsPerSecond = dropsPerHour / 3600.0;
+        self.dropsPerMinute = dropsPerHour / 60.0;
         float secondsPerDrop = 1 / dropsPerSecond;
         
-        NSString *secondsString = [NSString stringWithFormat:@"= 1 drop every %.00f seconds", secondsPerDrop];
+        NSString *secondsString = [NSString stringWithFormat:@"= 1 drop every %.2f seconds", secondsPerDrop];
         self.secondsLabelView.text = secondsString;
         
     }
