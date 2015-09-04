@@ -41,7 +41,7 @@
 - (IBAction)acknowledgePressed:(UIButton *)sender {
     
     if (self.boxUnChecked == NO) {
-        [self performSegueWithIdentifier:@"showAcknowledged" sender:sender];
+        [self dismissViewControllerAnimated:YES completion:nil];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasSeenTutorial"];
     }
     

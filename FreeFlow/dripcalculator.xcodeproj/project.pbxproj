@@ -18,6 +18,8 @@
 		DD66D73A1B86D4D600DBCFAC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD66D7381B86D4D600DBCFAC /* LaunchScreen.xib */; };
 		DD66D7461B86D4D600DBCFAC /* FreeFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD66D7451B86D4D600DBCFAC /* FreeFlowTests.m */; };
 		DD66D7511B873FB900DBCFAC /* DisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD66D7501B873FB900DBCFAC /* DisclaimerViewController.m */; };
+		DDA341DC1B988609008409F2 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA341DB1B988609008409F2 /* IAPHelper.m */; };
+		DDA341DF1B988724008409F2 /* AnalyzerIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA341DE1B988724008409F2 /* AnalyzerIAPHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,7 @@
 /* Begin PBXFileReference section */
 		DD1DB5351B8EE37B00F99297 /* ting.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ting.caf; sourceTree = "<group>"; };
 		DD1DB5371B8FE77900F99297 /* ping.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ping.caf; sourceTree = "<group>"; };
-		DD66D7231B86D4D600DBCFAC /* FreeFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD66D7231B86D4D600DBCFAC /* dripcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dripcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD66D7271B86D4D600DBCFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD66D7281B86D4D600DBCFAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD66D72A1B86D4D600DBCFAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,11 +47,15 @@
 		DD66D7341B86D4D600DBCFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD66D7361B86D4D600DBCFAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DD66D7391B86D4D600DBCFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		DD66D73F1B86D4D600DBCFAC /* FreeFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD66D73F1B86D4D600DBCFAC /* dripcalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dripcalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD66D7441B86D4D600DBCFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD66D7451B86D4D600DBCFAC /* FreeFlowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeFlowTests.m; sourceTree = "<group>"; };
 		DD66D74F1B873FB900DBCFAC /* DisclaimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisclaimerViewController.h; sourceTree = "<group>"; };
 		DD66D7501B873FB900DBCFAC /* DisclaimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisclaimerViewController.m; sourceTree = "<group>"; };
+		DDA341DA1B988609008409F2 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		DDA341DB1B988609008409F2 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		DDA341DD1B988724008409F2 /* AnalyzerIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIAPHelper.h; sourceTree = "<group>"; };
+		DDA341DE1B988724008409F2 /* AnalyzerIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIAPHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +97,8 @@
 		DD66D7241B86D4D600DBCFAC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD66D7231B86D4D600DBCFAC /* FreeFlow.app */,
-				DD66D73F1B86D4D600DBCFAC /* FreeFlowTests.xctest */,
+				DD66D7231B86D4D600DBCFAC /* dripcalculator.app */,
+				DD66D73F1B86D4D600DBCFAC /* dripcalculatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +114,10 @@
 				DD66D72E1B86D4D600DBCFAC /* FirstViewController.m */,
 				DD66D7301B86D4D600DBCFAC /* SecondViewController.h */,
 				DD66D7311B86D4D600DBCFAC /* SecondViewController.m */,
+				DDA341DA1B988609008409F2 /* IAPHelper.h */,
+				DDA341DB1B988609008409F2 /* IAPHelper.m */,
+				DDA341DD1B988724008409F2 /* AnalyzerIAPHelper.h */,
+				DDA341DE1B988724008409F2 /* AnalyzerIAPHelper.m */,
 				DD66D72A1B86D4D600DBCFAC /* AppDelegate.h */,
 				DD66D72B1B86D4D600DBCFAC /* AppDelegate.m */,
 				DD66D7361B86D4D600DBCFAC /* Images.xcassets */,
@@ -146,9 +156,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD66D7221B86D4D600DBCFAC /* FreeFlow */ = {
+		DD66D7221B86D4D600DBCFAC /* dripcalculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD66D7491B86D4D600DBCFAC /* Build configuration list for PBXNativeTarget "FreeFlow" */;
+			buildConfigurationList = DD66D7491B86D4D600DBCFAC /* Build configuration list for PBXNativeTarget "dripcalculator" */;
 			buildPhases = (
 				DD66D71F1B86D4D600DBCFAC /* Sources */,
 				DD66D7201B86D4D600DBCFAC /* Frameworks */,
@@ -158,14 +168,14 @@
 			);
 			dependencies = (
 			);
-			name = FreeFlow;
+			name = dripcalculator;
 			productName = FreeFlow;
-			productReference = DD66D7231B86D4D600DBCFAC /* FreeFlow.app */;
+			productReference = DD66D7231B86D4D600DBCFAC /* dripcalculator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DD66D73E1B86D4D600DBCFAC /* FreeFlowTests */ = {
+		DD66D73E1B86D4D600DBCFAC /* dripcalculatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD66D74C1B86D4D600DBCFAC /* Build configuration list for PBXNativeTarget "FreeFlowTests" */;
+			buildConfigurationList = DD66D74C1B86D4D600DBCFAC /* Build configuration list for PBXNativeTarget "dripcalculatorTests" */;
 			buildPhases = (
 				DD66D73B1B86D4D600DBCFAC /* Sources */,
 				DD66D73C1B86D4D600DBCFAC /* Frameworks */,
@@ -176,9 +186,9 @@
 			dependencies = (
 				DD66D7411B86D4D600DBCFAC /* PBXTargetDependency */,
 			);
-			name = FreeFlowTests;
+			name = dripcalculatorTests;
 			productName = FreeFlowTests;
-			productReference = DD66D73F1B86D4D600DBCFAC /* FreeFlowTests.xctest */;
+			productReference = DD66D73F1B86D4D600DBCFAC /* dripcalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -192,6 +202,7 @@
 				TargetAttributes = {
 					DD66D7221B86D4D600DBCFAC = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 9GHX6BADCR;
 					};
 					DD66D73E1B86D4D600DBCFAC = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -199,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DD66D71E1B86D4D600DBCFAC /* Build configuration list for PBXProject "FreeFlow" */;
+			buildConfigurationList = DD66D71E1B86D4D600DBCFAC /* Build configuration list for PBXProject "dripcalculator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -212,8 +223,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD66D7221B86D4D600DBCFAC /* FreeFlow */,
-				DD66D73E1B86D4D600DBCFAC /* FreeFlowTests */,
+				DD66D7221B86D4D600DBCFAC /* dripcalculator */,
+				DD66D73E1B86D4D600DBCFAC /* dripcalculatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,7 +260,9 @@
 				DD66D7511B873FB900DBCFAC /* DisclaimerViewController.m in Sources */,
 				DD66D72C1B86D4D600DBCFAC /* AppDelegate.m in Sources */,
 				DD66D72F1B86D4D600DBCFAC /* FirstViewController.m in Sources */,
+				DDA341DC1B988609008409F2 /* IAPHelper.m in Sources */,
 				DD66D7291B86D4D600DBCFAC /* main.m in Sources */,
+				DDA341DF1B988724008409F2 /* AnalyzerIAPHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +279,7 @@
 /* Begin PBXTargetDependency section */
 		DD66D7411B86D4D600DBCFAC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DD66D7221B86D4D600DBCFAC /* FreeFlow */;
+			target = DD66D7221B86D4D600DBCFAC /* dripcalculator */;
 			targetProxy = DD66D7401B86D4D600DBCFAC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -377,9 +390,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FreeFlow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -387,9 +403,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FreeFlow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -407,8 +426,8 @@
 				);
 				INFOPLIST_FILE = FreeFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FreeFlow.app/FreeFlow";
+				PRODUCT_NAME = dripcalculatorTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dripcalculator.app/dripcalculator";
 			};
 			name = Debug;
 		};
@@ -422,15 +441,15 @@
 				);
 				INFOPLIST_FILE = FreeFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FreeFlow.app/FreeFlow";
+				PRODUCT_NAME = dripcalculatorTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dripcalculator.app/dripcalculator";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD66D71E1B86D4D600DBCFAC /* Build configuration list for PBXProject "FreeFlow" */ = {
+		DD66D71E1B86D4D600DBCFAC /* Build configuration list for PBXProject "dripcalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD66D7471B86D4D600DBCFAC /* Debug */,
@@ -439,7 +458,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD66D7491B86D4D600DBCFAC /* Build configuration list for PBXNativeTarget "FreeFlow" */ = {
+		DD66D7491B86D4D600DBCFAC /* Build configuration list for PBXNativeTarget "dripcalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD66D74A1B86D4D600DBCFAC /* Debug */,
@@ -448,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD66D74C1B86D4D600DBCFAC /* Build configuration list for PBXNativeTarget "FreeFlowTests" */ = {
+		DD66D74C1B86D4D600DBCFAC /* Build configuration list for PBXNativeTarget "dripcalculatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD66D74D1B86D4D600DBCFAC /* Debug */,

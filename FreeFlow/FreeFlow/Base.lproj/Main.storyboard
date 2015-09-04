@@ -281,7 +281,7 @@
                                     <constraint firstAttribute="height" constant="30" id="vKR-XA-2KR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="U6u-cW-WO9"/>
@@ -289,6 +289,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="volumeTextField:" destination="8rJ-Kc-sve" eventType="editingDidEnd" id="1Dl-g1-6WM"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="Jwo-tZ-kyq"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of at least 5 taps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="X38-dF-8uc">
@@ -359,16 +360,17 @@
                                     <action selector="calculatePressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="VOa-re-zXf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="drip factor" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwR-nq-pOH">
-                                <rect key="frame" x="236" y="275" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="drip factor" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwR-nq-pOH">
+                                <rect key="frame" x="256" y="280" width="88" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <action selector="dripFactorTextField:" destination="8rJ-Kc-sve" eventType="editingDidEnd" id="0z2-XK-Ygq"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="kRP-eo-Psl"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ml" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHG-CZ-FlK">
-                                <rect key="frame" x="341" y="284" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ml" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHG-CZ-FlK">
+                                <rect key="frame" x="352" y="284.5" width="18.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -381,12 +383,14 @@
                             <constraint firstAttribute="centerX" secondItem="Vqy-DY-vDR" secondAttribute="centerX" id="6LR-a3-gGL"/>
                             <constraint firstItem="O0C-Lz-bHu" firstAttribute="leading" secondItem="2wV-m6-X5c" secondAttribute="trailing" constant="8" id="6YZ-pK-Urx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WVb-DI-IsI" secondAttribute="trailing" constant="20" id="6wq-By-L0G"/>
+                            <constraint firstAttribute="centerX" secondItem="cwR-nq-pOH" secondAttribute="centerX" id="75o-gr-75A"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="X38-dF-8uc" secondAttribute="bottom" constant="168" id="7Yh-hK-16h"/>
                             <constraint firstItem="2wV-m6-X5c" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="50" id="7mi-Ku-Pxg"/>
                             <constraint firstItem="M3o-Y6-wTG" firstAttribute="top" secondItem="9kn-76-And" secondAttribute="bottom" constant="8" id="94U-ku-LvC"/>
                             <constraint firstItem="sPQ-1j-6D8" firstAttribute="top" secondItem="WVb-DI-IsI" secondAttribute="bottom" constant="29" id="ANB-zw-Su9"/>
                             <constraint firstItem="sPQ-1j-6D8" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="168" id="AXc-hs-YcL"/>
                             <constraint firstItem="sPQ-1j-6D8" firstAttribute="top" secondItem="7s8-Lj-njU" secondAttribute="bottom" constant="29" id="BHf-IM-imt"/>
+                            <constraint firstItem="34S-Vz-7U2" firstAttribute="top" secondItem="cwR-nq-pOH" secondAttribute="bottom" constant="22" id="BQy-Wj-Zlm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qhP-EM-UVF" secondAttribute="trailing" constant="146" id="D6P-EN-Z7h"/>
                             <constraint firstItem="34S-Vz-7U2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="36" id="DpD-23-uQN"/>
                             <constraint firstAttribute="centerX" secondItem="X38-dF-8uc" secondAttribute="centerX" constant="-1" id="GUE-Yv-OHg"/>
@@ -399,6 +403,7 @@
                             <constraint firstItem="O0C-Lz-bHu" firstAttribute="top" secondItem="qhP-EM-UVF" secondAttribute="bottom" constant="46" id="QYT-PR-wf4"/>
                             <constraint firstItem="O0C-Lz-bHu" firstAttribute="leading" secondItem="2wV-m6-X5c" secondAttribute="trailing" id="Qu9-3i-4SG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X38-dF-8uc" secondAttribute="trailing" constant="4" id="R77-Lu-W6j"/>
+                            <constraint firstItem="zHG-CZ-FlK" firstAttribute="leading" secondItem="cwR-nq-pOH" secondAttribute="trailing" constant="8" id="SuY-3M-tjk"/>
                             <constraint firstItem="Vqy-DY-vDR" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="5" id="TUG-c4-leo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M3o-Y6-wTG" secondAttribute="trailing" constant="5" id="TvF-Vr-szU"/>
                             <constraint firstItem="7s8-Lj-njU" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="20" id="UEX-rd-46K"/>
@@ -432,6 +437,7 @@
                             <constraint firstItem="34S-Vz-7U2" firstAttribute="top" secondItem="qhP-EM-UVF" secondAttribute="bottom" constant="144" id="wqW-9D-dNc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9kn-76-And" secondAttribute="trailing" constant="5" id="xVA-3O-keW"/>
                             <constraint firstItem="M3o-Y6-wTG" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="109" id="xuW-YV-Fqb"/>
+                            <constraint firstItem="34S-Vz-7U2" firstAttribute="top" secondItem="zHG-CZ-FlK" secondAttribute="bottom" constant="27" id="xwy-MH-Sbn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9kn-76-And" secondAttribute="trailing" constant="5" id="yml-Xc-ylO"/>
                         </constraints>
                         <variation key="default">
@@ -466,15 +472,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Rate Analyzer" image="stouch" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="calculateButton" destination="7s8-Lj-njU" id="R3O-cm-ArE"/>
                         <outlet property="dripFactorTextField" destination="cwR-nq-pOH" id="UDq-JI-WQs"/>
                         <outlet property="expireLabel" destination="M3o-Y6-wTG" id="Rje-0q-Djc"/>
                         <outlet property="rateLabel" destination="O0C-Lz-bHu" id="lPY-52-f3d"/>
+                        <outlet property="resetButton" destination="WVb-DI-IsI" id="Kx9-B5-Pib"/>
                         <outlet property="volumeTextField" destination="Vqy-DY-vDR" id="x7X-gV-FF2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="379"/>
+            <point key="canvasLocation" x="750" y="441"/>
         </scene>
         <!--Disclaimer View Controller-->
         <scene sceneID="9w1-To-oL6">
@@ -543,7 +551,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="acknowledgePressed:" destination="jbJ-11-ih0" eventType="touchUpInside" id="qAJ-vP-eya"/>
-                                    <segue destination="9pv-A4-QxB" kind="show" identifier="showAcknowledged" id="Fgj-uI-rWc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4N-px-RqD">
@@ -620,7 +627,4 @@
         <image name="stouch" width="30" height="30"/>
         <image name="uncheckeds" width="40" height="40"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Fgj-uI-rWc"/>
-    </inferredMetricsTieBreakers>
 </document>

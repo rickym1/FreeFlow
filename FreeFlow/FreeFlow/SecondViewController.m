@@ -15,8 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *expireLabel;
 @property (weak, nonatomic) IBOutlet UITextField *volumeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dripFactorTextField;
+@property (weak, nonatomic) IBOutlet UIButton *calculateButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
-@property (nonatomic, assign) NSUInteger tapCount;
 @property (nonatomic, assign) CGFloat intervalAvg;
 @property (nonatomic, strong) NSMutableArray *tapTimes;
 @property (nonatomic, assign) CFTimeInterval timeOfLastTouch;
@@ -32,19 +33,14 @@
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    self.tapCount = 0;
-    [self.tapTimes removeAllObjects];
+    NSLog(@"yo");
+    [self resetPressed:nil];
     
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [touches anyObject];
-    self.tapCount = [touch tapCount];
-    
-    
-    if (self.tapTimes.count < 1) {
+    NSLog(@"hey");
+    if (self.timeOfLastTouch == 0) {
         self.timeOfLastTouch = CACurrentMediaTime();
     } else {
         NSTimeInterval timeDifference = CACurrentMediaTime() - self.timeOfLastTouch;
@@ -52,9 +48,24 @@
         [self.tapTimes addObject:@(timeDifference)];
     }
     
-    
-    
+    [self.view endEditing:YES];
+
 }
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+       shouldReceiveTouch:(UITouch *)touch {
+    
+    if (CGRectContainsPoint(self.calculateButton.frame, [touch locationInView:self.view]))
+    {
+        return NO;
+    }
+    if (CGRectContainsPoint(self.resetButton.frame, [touch locationInView:self.view]))
+    {
+        return NO;
+    }
+    return YES;
+}
+
 - (IBAction)dripFactorTextField:(UITextField *)sender {
     
     NSString *enteredText = sender.text;
@@ -76,9 +87,27 @@
     
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
+    
+    
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789."] invertedSet];
+    
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    
+    return [string isEqualToString:filtered];
+    
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
 - (IBAction)calculatePressed:(UIButton *)sender {
     
-    if (self.tapCount < 2) {
+    if (self.tapTimes.count < 1) {
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"At least two taps are required in order to calculate rate." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
@@ -88,19 +117,15 @@
         return;
     }
     
-    if (self.tapCount == 2) {
+    if (self.tapTimes.count == 1) {
         [self performSelector:@selector(tappedTwice) withObject:nil];
     }
-    if (self.tapCount == 3) {
+    if (self.tapTimes.count == 2) {
         [self performSelector:@selector(tappedThreeTimes) withObject:nil];
     }
-    if (self.tapCount == 4) {
+    if (self.tapTimes.count >= 3) {
         [self performSelector:@selector(tappedFourTimes) withObject:nil];
     }
-    if (self.tapCount >= 5) {
-        [self performSelector:@selector(tappedFiveTimes) withObject:nil];
-    }
-    
     
     CGFloat dripFactor = [self.dripFactorTextField.text floatValue];
     CGFloat volume = [self.volumeTextField.text floatValue];
@@ -155,13 +180,9 @@
     
 }
 
-- (void)tappedFiveTimes {
-    
-}
-
 - (IBAction)resetPressed:(UIButton *)sender {
     
-    self.tapCount = 0;
+    self.timeOfLastTouch = 0;
     [self.tapTimes removeAllObjects];
 
     
