@@ -49,7 +49,13 @@
     }
     
     [self.view endEditing:YES];
-
+    
+    self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    
+    [UIView animateWithDuration:0.05 animations:^{
+        self.view.layer.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1].CGColor;
+    } completion:^(BOOL finished) {
+    }];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
