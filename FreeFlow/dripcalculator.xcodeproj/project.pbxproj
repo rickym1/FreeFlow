@@ -20,6 +20,8 @@
 		DD66D7511B873FB900DBCFAC /* DisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD66D7501B873FB900DBCFAC /* DisclaimerViewController.m */; };
 		DDA341DC1B988609008409F2 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA341DB1B988609008409F2 /* IAPHelper.m */; };
 		DDA341DF1B988724008409F2 /* AnalyzerIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA341DE1B988724008409F2 /* AnalyzerIAPHelper.m */; };
+		DDA341E11B995AF0008409F2 /* blip1.caf in Resources */ = {isa = PBXBuildFile; fileRef = DDA341E01B995AF0008409F2 /* blip1.caf */; };
+		DDA341E31B995DA8008409F2 /* blip2.caf in Resources */ = {isa = PBXBuildFile; fileRef = DDA341E21B995DA8008409F2 /* blip2.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		DDA341DB1B988609008409F2 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		DDA341DD1B988724008409F2 /* AnalyzerIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerIAPHelper.h; sourceTree = "<group>"; };
 		DDA341DE1B988724008409F2 /* AnalyzerIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzerIAPHelper.m; sourceTree = "<group>"; };
+		DDA341E01B995AF0008409F2 /* blip1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blip1.caf; sourceTree = "<group>"; };
+		DDA341E21B995DA8008409F2 /* blip2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blip2.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				DD1DB5351B8EE37B00F99297 /* ting.caf */,
 				DD1DB5371B8FE77900F99297 /* ping.caf */,
+				DDA341E01B995AF0008409F2 /* blip1.caf */,
+				DDA341E21B995DA8008409F2 /* blip2.caf */,
 			);
 			name = sounds;
 			sourceTree = "<group>";
@@ -237,8 +243,10 @@
 				DD66D7351B86D4D600DBCFAC /* Main.storyboard in Resources */,
 				DD66D73A1B86D4D600DBCFAC /* LaunchScreen.xib in Resources */,
 				DD1DB5361B8EE37B00F99297 /* ting.caf in Resources */,
+				DDA341E31B995DA8008409F2 /* blip2.caf in Resources */,
 				DD1DB5381B8FE77900F99297 /* ping.caf in Resources */,
 				DD66D7371B86D4D600DBCFAC /* Images.xcassets in Resources */,
+				DDA341E11B995AF0008409F2 /* blip1.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AnalyzerIAPHelper.h"
 
 
 @interface SecondViewController : UIViewController

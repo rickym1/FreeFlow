@@ -8,8 +8,9 @@
 
 #import "SecondViewController.h"
 
-
-@interface SecondViewController () <UIGestureRecognizerDelegate>
+@interface SecondViewController () <UIGestureRecognizerDelegate> {
+    NSNumberFormatter * _priceFormatter;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *rateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expireLabel;
@@ -21,6 +22,8 @@
 @property (nonatomic, assign) CGFloat intervalAvg;
 @property (nonatomic, strong) NSMutableArray *tapTimes;
 @property (nonatomic, assign) CFTimeInterval timeOfLastTouch;
+@property (nonatomic, strong) SKProduct *product;
+
 
 @end
 
@@ -30,7 +33,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.tapTimes = [NSMutableArray array];
-}
+    
+    [[AnalyzerIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (products.count != 0) {
+            self.product = products[0];
+        }
+        [_priceFormatter setLocale:self.product.priceLocale];
+        //cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
+        
+        
+        if ([[AnalyzerIAPHelper sharedInstance] productPurchased:self.product.productIdentifier]) {
+            self.calculateButton.enabled = NO;
+        } else {
+            self.calculateButton.enabled = YES;
+        }
+
+    }];
+    
+    _priceFormatter = [[NSNumberFormatter alloc] init];
+    [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
+    }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"yo");
@@ -39,7 +63,12 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if ([self.volumeTextField isFirstResponder] || [self.dripFactorTextField isFirstResponder]) {
+        return;
+    }
     NSLog(@"hey");
+    
     if (self.timeOfLastTouch == 0) {
         self.timeOfLastTouch = CACurrentMediaTime();
     } else {
@@ -47,15 +76,18 @@
         self.timeOfLastTouch = CACurrentMediaTime();
         [self.tapTimes addObject:@(timeDifference)];
     }
-    
-    [self.view endEditing:YES];
-    
+        
     self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
     
     [UIView animateWithDuration:0.05 animations:^{
         self.view.layer.backgroundColor = [UIColor colorWithRed:0x1B/255.0f green:0xB6/255.0f blue:0xFF/255.0f alpha:1].CGColor;
     } completion:^(BOOL finished) {
     }];
+    
+    if (self.tapTimes.count >= 3) {
+        [self calculatePressed:nil];
+    }
+    
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
@@ -124,13 +156,13 @@
     }
     
     if (self.tapTimes.count == 1) {
-        [self performSelector:@selector(tappedTwice) withObject:nil];
+        [self tappedTwice];
     }
     if (self.tapTimes.count == 2) {
-        [self performSelector:@selector(tappedThreeTimes) withObject:nil];
+        [self tappedThreeTimes];
     }
     if (self.tapTimes.count >= 3) {
-        [self performSelector:@selector(tappedFourTimes) withObject:nil];
+        [self tappedFourTimes];
     }
     
     CGFloat dripFactor = [self.dripFactorTextField.text floatValue];
@@ -152,6 +184,8 @@
     
     
     [self resetPressed:nil];
+    
+    
     
 }
 

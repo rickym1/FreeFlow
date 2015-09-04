@@ -166,14 +166,25 @@
 
 
 -(void)playRate {
-    
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"ping" ofType:@"caf"]];
-    NSError *error;
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    if (error) {
-        NSLog(@"Error in audioPlayer, %@", [error localizedDescription]);
+    if (self.dropsPerMinute < 120) {
+        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"ping" ofType:@"caf"]];
+        NSError *error;
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+        if (error) {
+            NSLog(@"Error in audioPlayer, %@", [error localizedDescription]);
+        } else {
+            _audioPlayer.delegate = self;
+        }
     } else {
-        _audioPlayer.delegate = self;
+        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"blip2" ofType:@"caf"]];
+        NSError *error;
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+        if (error) {
+            NSLog(@"Error in audioPlayer, %@", [error localizedDescription]);
+        } else {
+            _audioPlayer.delegate = self;
+        }
+
     }
     
     if (self.soundOff == NO) {
